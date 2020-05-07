@@ -4,10 +4,12 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
 import torch.nn.functional as F
+from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
 torch.manual_seed(14)
 # hyper parameters
 
 input_size = 12
+
 num_classes = 1
 num_epochs = 10000
 batch_size = 10
@@ -15,7 +17,7 @@ learning_rate = 0.01
 
 # loading data
 
-data = pd.read_csv('train.csv',header=None)
+data = pd.read_csv('/home/mk/Desktop/placement/data/train.csv',header=None)
 _y_ = data[13]
 data = data.drop([0],axis=1)
 _X_ = data.drop([13],axis=1)
@@ -61,16 +63,15 @@ for parameter in model.parameters():
 
 #prediction
 
-y_pred = model.forward(X_test)
+model.eval()
+y_pred = model(X_test)
 for i in range(0,X_test.shape[0]):
     if(y_pred[i]>0.5 or y_pred[i]==0.5):
         y_pred[i] = 1
     else:
         y_pred[i] = 0
 
-count = 0
-for i in range(0,X_test.shape[0]):
-    if(y_pred[i]==y_test[i]):
-        count = count + 1
-
-print(count/X_test.shape[0])
+print('precision:'+str(precision_score(y_test.detach().numpy(),y_pred.detach().numpy())))
+print('accuracy:'+str(accuracy_score(y_test.detach().numpy(),y_pred.detach().numpy())))
+print('f1 score:'+str(f1_score(y_test.detach().numpy(),y_pred.detach().numpy())))
+print('recall:'+str(recall_score(y_test.detach().numpy(),y_pred.detach().numpy())))
