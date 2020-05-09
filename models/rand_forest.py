@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
 
 data = pd.read_csv('/home/mk/Desktop/placement/data/train.csv',header=None)
@@ -10,7 +10,7 @@ _X_ = data.drop([13],axis=1)
 _X_ = _X_.drop([14],axis=1)
 _y_ = data[13]
 X_train, X_test, y_train, y_test = train_test_split(_X_, _y_,test_size=0.23, random_state=39)
-model = SVC(C=3,kernel='rbf')
+model = RandomForestClassifier(n_estimators=100)
 model.fit(X_train,y_train)
 y = model.predict(X_test)
 print('accuracy:'+str(accuracy_score(y_test,y)))
