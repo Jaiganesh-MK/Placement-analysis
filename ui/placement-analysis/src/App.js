@@ -15,11 +15,18 @@ class App extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        textfield1: '',
-        textfield2: '',
-        select1: 1,
-        select2: 1,
-        select3: 1
+        select4: 0,
+        select5: 0,
+        select1: 0,
+        select2: 0,
+        select3: 0,
+        select6: 0,
+        select7: 0,
+        select8: 0,
+        select9: 0,
+        select10:0,
+        select11: 0,
+        select12: 0
       },
       result: ""
     };
@@ -40,10 +47,10 @@ class App extends Component {
     this.setState({ isLoading: true });
     fetch('http://127.0.0.1:5000/prediction/', 
       {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
+        // headers: {
+        //   'Accept': 'application/json',
+        //   'Content-Type': 'application/json'
+        // },
         method: 'POST',
         body: JSON.stringify(formData)
       })
@@ -66,7 +73,7 @@ class App extends Component {
     const result = this.state.result;
 
     return (
-      <Container>
+      <Container-fluid>
         <div>
           <h1 className="title">Placement prediction</h1>
         </div>
@@ -78,7 +85,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select2}
-                  name="select2"
+                  name="select1"
                   onChange={this.handleChange}>
                   <option>less than 51%</option>
                   <option>51% to 57%</option>
@@ -93,7 +100,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select1}
-                  name="select1"
+                  name="select2"
                   onChange={this.handleChange}>
                   <option>less than 40%</option>
                   <option>40% to 60%</option>
@@ -108,7 +115,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select1}
-                  name="select1"
+                  name="select3"
                   onChange={this.handleChange}>
                   <option>less than 50%</option>
                   <option>50% to 61%</option>
@@ -126,7 +133,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select1}
-                  name="select1"
+                  name="select4"
                   onChange={this.handleChange}>
                   <option>Science</option>
                   <option>Commerce</option>
@@ -138,7 +145,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select1}
-                  name="select1"
+                  name="select5"
                   onChange={this.handleChange}>
                   <option>CBSE</option>
                   <option>Other boards</option>
@@ -149,7 +156,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select1}
-                  name="select1"
+                  name="select6"
                   onChange={this.handleChange}>
                   <option>less than 37%</option>
                   <option>37% to 50%</option>
@@ -168,7 +175,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select3}
-                  name="select3"
+                  name="select7"
                   onChange={this.handleChange}>
                   <option>Select</option>
                   <option>Male</option>
@@ -180,7 +187,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select3}
-                  name="select3"
+                  name="select8"
                   onChange={this.handleChange}>
                   <option>Science and Tech</option>
                   <option>Commerce and Management</option>
@@ -191,7 +198,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select3}
-                  name="select3"
+                  name="select9"
                   onChange={this.handleChange}>
                   <option>Yes</option>
                   <option>No</option>
@@ -204,7 +211,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select2}
-                  name="select2"
+                  name="select10"
                   onChange={this.handleChange}>
                   <option>CBSE</option>
                   <option>Other boards</option>
@@ -215,7 +222,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select1}
-                  name="select1"
+                  name="select11"
                   onChange={this.handleChange}>
                   <option>less than 50%</option>
                   <option>50% to 60%</option>
@@ -230,7 +237,7 @@ class App extends Component {
                 <Form.Control 
                   as="select"
                   value={formData.select2}
-                  name="select2"
+                  name="select12"
                   onChange={this.handleChange}>
                   <option>Marketing and HR</option>
                   <option>Marketing and Finance</option>
@@ -266,7 +273,7 @@ class App extends Component {
             </Row>)
           }
         </div>
-      </Container>
+      </Container-fluid>
     );
   }
 }

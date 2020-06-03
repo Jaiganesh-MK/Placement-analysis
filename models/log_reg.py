@@ -6,6 +6,7 @@ import numpy as np
 import torch.nn.functional as F
 from torch.utils.data import DataLoader,Dataset
 from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
+import joblib
 torch.manual_seed(14)
 
 # hyper parameters
@@ -18,7 +19,7 @@ learning_rate = 0.00002
 
 # loading data
 
-data = pd.read_csv('/home/mk/Desktop/placement/data/train.csv',header=None)
+data = pd.read_csv('/home/fuhrer/Desktop/Placement-analysis/data/train.csv',header=None)
 _y_ = data[13]
 data = data.drop([0],axis=1)
 _X_ = data.drop([13],axis=1)
@@ -90,3 +91,5 @@ print('precision:'+str(precision_score(y_test.detach().numpy(),y_pred.detach().n
 print('accuracy:'+str(accuracy_score(y_test.detach().numpy(),y_pred.detach().numpy())))
 print('f1 score:'+str(f1_score(y_test.detach().numpy(),y_pred.detach().numpy())))
 print('recall:'+str(recall_score(y_test.detach().numpy(),y_pred.detach().numpy())))
+
+torch.save(model.state_dict(),'/home/fuhrer/Desktop/Placement-analysis/data/classifier')

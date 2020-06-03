@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
 
-data = pd.read_csv('/home/mk/Desktop/placement/data/train.csv',header=None)
+data = pd.read_csv('/home/fuhrer/Desktop/Placement-analysis/data/train.csv',header=None)
 data = data.drop([0],axis=1)
 _X_ = data.drop([13],axis=1)
 _X_ = _X_.drop([14],axis=1)
