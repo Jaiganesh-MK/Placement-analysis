@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,16 +14,16 @@ class App extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        select4: 0,
-        select5: 0,
-        select1: 0,
-        select2: 0,
-        select3: 0,
-        select6: 0,
-        select7: 0,
-        select8: 0,
+        select4: 3,
+        select5: 4,
+        select1: 4,
+        select2: 5,
+        select3: 6,
+        select6: 7,
+        select7: 8,
+        select8: 9,
         select9: 0,
-        select10:0,
+        select10:1,
         select11: 0,
         select12: 0
       },
@@ -45,17 +44,18 @@ class App extends Component {
   handlePredictClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/prediction/', 
+    fetch('http://127.0.0.1:5000/predict', 
       {
-        // headers: {
-        //   'Accept': 'application/json',
-        //   'Content-Type': 'application/json'
-        // },
-        method: 'POST',
+        method: 'POST',       
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }, 
         body: JSON.stringify(formData)
       })
       .then(response => response.json())
       .then(response => {
+        console.log(response)
         this.setState({
           result: response.result,
           isLoading: false

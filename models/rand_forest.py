@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
+import joblib
 
 data = pd.read_csv('/home/fuhrer/Desktop/Placement-analysis/data/train.csv',header=None)
 data = data.drop([0],axis=1)
@@ -17,3 +18,4 @@ print('accuracy:'+str(accuracy_score(y_test,y)))
 print('precision:'+str(precision_score(y_test,y)))
 print('recall:'+str(recall_score(y_test,y)))
 print('f1 score:'+str(f1_score(y_test,y)))
+joblib.dump(model,"/home/fuhrer/Desktop/Placement-analysis/rf.joblib")
