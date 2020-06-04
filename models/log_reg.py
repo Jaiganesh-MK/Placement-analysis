@@ -13,13 +13,13 @@ torch.manual_seed(14)
 
 input_size = 12
 num_classes = 1
-num_epochs = 600
+num_epochs = 3000
 batch_size = 1
-learning_rate = 0.00002
+learning_rate = 0.00003
 
 # loading data
 
-data = pd.read_csv('/home/fuhrer/Desktop/Placement-analysis/data/train.csv',header=None)
+data = pd.read_csv('/home/fuhrer/Desktop/Placement-analysis/data/data.csv',header=None)
 _y_ = data[13]
 data = data.drop([0],axis=1)
 _X_ = data.drop([13],axis=1)

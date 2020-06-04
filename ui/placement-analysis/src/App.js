@@ -14,16 +14,16 @@ class App extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        select4: 3,
-        select5: 4,
-        select1: 4,
-        select2: 5,
-        select3: 6,
-        select6: 7,
-        select7: 8,
-        select8: 9,
+        select1: 0,
+        select2: 0,
+        select3: 0,
+        select4: 0,
+        select5: 0,
+        select6: 0,
+        select7: 0,
+        select8: 0,
         select9: 0,
-        select10:1,
+        select10:0,
         select11: 0,
         select12: 0
       },
@@ -84,9 +84,10 @@ class App extends Component {
                 <Form.Label>MBA percentage</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select2}
-                  name="select1"
+                  value={formData.select12}
+                  name="select12"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>less than 51%</option>
                   <option>51% to 57%</option>
                   <option>57% to 62%</option>
@@ -99,9 +100,10 @@ class App extends Component {
                 <Form.Label>10th percentage</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select1}
+                  value={formData.select2}
                   name="select2"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>less than 40%</option>
                   <option>40% to 60%</option>
                   <option>60% to 67%</option>
@@ -114,9 +116,10 @@ class App extends Component {
                 <Form.Label>UG-Degree percentage</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select1}
-                  name="select3"
+                  value={formData.select7}
+                  name="select7"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>less than 50%</option>
                   <option>50% to 61%</option>
                   <option>61% to 66%</option>
@@ -132,9 +135,10 @@ class App extends Component {
                 <Form.Label>12th Stream</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select1}
-                  name="select4"
+                  value={formData.select6}
+                  name="select6"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>Science</option>
                   <option>Commerce</option>
                   <option>Arts</option>
@@ -144,9 +148,10 @@ class App extends Component {
                 <Form.Label>12th Board</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select1}
+                  value={formData.select5}
                   name="select5"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>CBSE</option>
                   <option>Other boards</option>
                 </Form.Control>
@@ -155,9 +160,10 @@ class App extends Component {
                 <Form.Label>12th percentage</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select1}
-                  name="select6"
+                  value={formData.select4}
+                  name="select4"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>less than 37%</option>
                   <option>37% to 50%</option>
                   <option>50% to 60%</option>
@@ -174,8 +180,8 @@ class App extends Component {
                 <Form.Label>Gender</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select3}
-                  name="select7"
+                  value={formData.select1}
+                  name="select1"
                   onChange={this.handleChange}>
                   <option>Select</option>
                   <option>Male</option>
@@ -186,9 +192,10 @@ class App extends Component {
                 <Form.Label>Field of Degree</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select3}
+                  value={formData.select8}
                   name="select8"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>Science and Tech</option>
                   <option>Commerce and Management</option>
                 </Form.Control>
@@ -197,9 +204,10 @@ class App extends Component {
                 <Form.Label>Work Experience</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select3}
+                  value={formData.select9}
                   name="select9"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>Yes</option>
                   <option>No</option>
                 </Form.Control>
@@ -210,9 +218,10 @@ class App extends Component {
                 <Form.Label>10th Board</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select2}
-                  name="select10"
+                  value={formData.select3}
+                  name="select3"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>CBSE</option>
                   <option>Other boards</option>
                 </Form.Control>
@@ -221,9 +230,10 @@ class App extends Component {
                 <Form.Label>Employement-test percentage</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select1}
-                  name="select11"
+                  value={formData.select10}
+                  name="select10"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>less than 50%</option>
                   <option>50% to 60%</option>
                   <option>60% to 71%</option>
@@ -236,9 +246,10 @@ class App extends Component {
                 <Form.Label>MBA specialization</Form.Label>
                 <Form.Control 
                   as="select"
-                  value={formData.select2}
-                  name="select12"
+                  value={formData.select11}
+                  name="select11"
                   onChange={this.handleChange}>
+                  <option>Select</option>
                   <option>Marketing and HR</option>
                   <option>Marketing and Finance</option>
                 </Form.Control>
